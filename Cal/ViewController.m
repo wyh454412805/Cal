@@ -9,6 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *expressionField;
+@property (strong, nonatomic) IBOutlet UIView *resultLabel;
 
 @end
 
@@ -22,6 +24,29 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (double)NumPress:(int)Num
+{
+    int displayNum = 0;
+    displayNum = displayNum * 10 + Num;
+    return displayNum;
+    
+}
+
+- (IBAction)button:(id)sender
+{
+    int num = [sender tag];
+    switch (num) {
+        case 0:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:
+            [self NumPress:num];
+            break;
+            
+        default:
+            break;
+    }
+    
+    
 }
 
 @end
