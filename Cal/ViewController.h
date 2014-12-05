@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property NSString *str;
+@property NSMutableString *string;
+
 
 @end
 

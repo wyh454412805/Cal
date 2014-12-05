@@ -10,7 +10,8 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *expressionField;
-@property (strong, nonatomic) IBOutlet UIView *resultLabel;
+@property (weak, nonatomic) IBOutlet UILabel *result;
+
 
 @end
 
@@ -26,20 +27,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (double)NumPress:(int)Num
-{
-    int displayNum = 0;
-    displayNum = displayNum * 10 + Num;
-    return displayNum;
-    
-}
+
+
+
 
 - (IBAction)button:(id)sender
 {
     int num = [sender tag];
     switch (num) {
         case 0:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9:
-            [self NumPress:num];
+            self.str = [self.str stringByAppendingFormat:@"%d",num];
+            self.expressionField.text = self.str;
+            
+        case 11:
+            self.str = [self.str stringByAppendingString:@"+"];
+            self.expressionField.text = self.str;
+        case 12:
+            self.str = [self.str stringByAppendingString:@"-"];
+            self.expressionField.text = self.str;
+        case 15:
+          
+            
+          
             break;
             
         default:

@@ -167,6 +167,7 @@
                     </view>
                     <connections>
                         <outlet property="expressionField" destination="vse-Kt-Wrq" id="tpP-mI-yHj"/>
+                        <outlet property="result" destination="EWa-A4-a3F" id="IJd-ML-mTg"/>
                         <outlet property="resultLabel" destination="kh9-bI-dsS" id="BVq-mY-kT7"/>
                     </connections>
                 </viewController>
